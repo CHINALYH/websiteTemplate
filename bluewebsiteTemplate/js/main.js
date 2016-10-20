@@ -20,17 +20,13 @@ $(function() {
             $nav = $( '#nav-dots > span' ),
             slitslider = $( '#slider' ).slitslider( {
                 onBeforeChange : function( slide, pos ) {
-
                     $nav.removeClass( 'nav-dot-current' );
                     $nav.eq( pos ).addClass( 'nav-dot-current' );
-
                 }
             } ),
-
             init = function() {
 
                 initEvents();
-                
             },
             initEvents = function() {
 
@@ -39,14 +35,10 @@ $(function() {
 
                     slitslider.next();
                     return false;
-
                 } );
-
                 $navArrows.children( ':first' ).on( 'click', function() {
-                    
                     slitslider.previous();
                     return false;
-
                 } );
 
                 $nav.each( function( i ) {

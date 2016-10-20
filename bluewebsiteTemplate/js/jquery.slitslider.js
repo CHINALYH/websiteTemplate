@@ -11,7 +11,7 @@
 
 ;( function( $, window, undefined ) {
 	
-	'use strict';
+	'use strict';//使用严格模式
 
 	/*
 	* debouncedresize: special jQuery event that happens once after a window resize
@@ -22,11 +22,11 @@
 	* Copyright 2011 @louis_remi
 	* Licensed under the MIT license.
 	*/
-	var $event = $.event,
+	var $event = $.event,//$.event是一个对象   special是对象中的一个属性(也是一个对象)
+	//special中的属性:用于某些事件类型的特殊行为和属性  beforeunload  blur  mouseenter  ready
 	$special,
 	resizeTimeout;
-
-	$special = $event.special.debouncedresize = {
+	$special = $event.special.debouncedresize = {//给special扩展新的属性
 		setup: function() {
 			$( this ).on( "resize", $special.handler );
 		},
@@ -87,7 +87,8 @@
 		onBeforeChange : function( slide, idx ) { return false; },
 		onAfterChange : function( slide, idx ) { return false; }
 	};
-
+	
+	/*替换原型对象的继承*/
 	$.Slitslider.prototype = {
 
 		_init : function( options ) {
